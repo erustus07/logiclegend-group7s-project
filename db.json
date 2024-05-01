@@ -1,0 +1,181 @@
+{
+    "venues": [
+      {
+        "id": 1,
+        "name": "Ocean View",
+        "location": "Kiambu",
+        "capacity": 200,
+        "description": "A casual place and backdrop for any conference.",
+        "image": "https://i.pinimg.com/564x/54/5c/8a/545c8a3fee30059013e1fe301b521665.jpg"
+      },
+    
+ 
+        {
+          "id": 2,
+          "name": "monti",
+          "location": "nairobi",
+          "capacity": 200,
+          "description": "A formal and calm for any conference.",
+          "image": "https://i.pinimg.com/564x/6b/a7/88/6ba788e983e5593f0dd88fcc2140287f.jpg"
+        },
+    
+        {
+          "id": 3,
+          "name": "ribuno",
+          "location": "nakuru",
+          "capacity": 200,
+          "description": "A casual place and backdrop for any conference.",
+          "image": "https://i.pinimg.com/564x/6d/c1/e3/6dc1e346d9d93df49ae878c34fc9dcfd.jpg"
+        },
+      
+        {
+          "id": 4,
+          "name": "riron city",
+          "location": "Kiambu",
+          "capacity": 200,
+          "description": "A casual place and backdrop for any conference.",
+          "image": "https://i.pinimg.com/564x/31/85/4f/31854fc06bd859167aae24f2a5b09168.jpg"
+        },
+      
+        {
+          "id": 5,
+          "name": "cepta",
+          "location": "nairobi",
+          "capacity": 200,
+          "description": "A casual place and backdrop for any conference.",
+          "image": "https://i.pinimg.com/564x/31/85/4f/31854fc06bd859167aae24f2a5b09168.jpg"
+        },
+      
+        {
+          "id": 6,
+          "name" : "rio two",
+          "location": "malindi",
+          "capacity": 200,
+          "description": "A casual place and backdrop for any conference.",
+          "image": "https://i.pinimg.com/564x/1f/be/3e/1fbe3ecf0722801408b692e227ef2f86.jpg"
+        },
+      
+        {
+          "id": 7,
+          "name": "husiato",
+          "location": "naivasha",
+          "capacity": 200,
+          "description": "A casual place and backdrop for any conference.",
+          "image": "https://i.pinimg.com/564x/40/ce/df/40cedf09769232d045d9a4f148f7ced8.jpg"
+        },
+    
+        {
+          "id": 8,
+          "name": "kwetu palace",
+          "location": "Kiambu",
+          "capacity": 200,
+          "description": "A casual place and backdrop for any conference.",
+          "image": "https://i.pinimg.com/564x/c4/ef/2a/c4ef2af50c1813293fd3d477f96ca4cb.jpg"
+        },
+
+        {
+          "id" :9, 
+          "name" :"musili place",
+          "location" :"nairobi",
+          "capacity" :300,
+          "description" :"very official,,perfect for a wedding",
+          "image" :"https://i.pinimg.com/564x/18/1e/b6/181eb67ccff3ea07d9e4010d5a8ad7ba.jpg"
+        },
+
+        {
+          "id" : 10,
+          "name" :"bonnie's ",
+          "location" :"jikaze",
+          "capacity" :200,
+          "description":"catual,perfect for a meetup",
+          "image" :"https://i.pinimg.com/564x/e6/8c/d6/e68cd6a21673b525d26cd95ec6dd213c.jpg"
+        },
+
+        {
+          "id" : 11,
+          "name" :"stunta",
+          "location" :"Kiambu",
+          "capacity" :200,
+          "description" :"A casual place and backdrop for any conference.",
+          "image" :"https://i.pinimg.com/564x/e8/a3/7a/e8a37aeea45ec9484f3998f13681fec1.jpg"
+        },
+
+        {
+          "id" : 12,
+          "name" :"tafaria",
+          "location" :"jikaze",
+          "capacity" :150,
+          "description" :"very official,,perfect for a wedding",
+          "image" :"https://i.pinimg.com/564x/eb/cb/8b/ebcb8b469c34e63fb219a88eecb7b11a.jpg"
+        },
+
+        {
+          "id" : 13,
+          "name" :"kalin hub",
+          "location" :"muran'ga",
+          "capacity" :200,
+          "description" :"A formal and calm for any conference.",
+          "image" :"https://i.pinimg.com/564x/8b/0e/5f/8b0e5f40a30a7d3bd409e2bdd45bbeb7.jpg"
+        },
+
+        {
+          "id" : 14,
+          "name" :"papyrus situ",
+          "location" :"naivasha",
+          "capacity" :250,
+          "description" :"catual,perfect for a meetup",
+          "image" :"https://i.pinimg.com/564x/dd/f3/ed/ddf3ed400729b1340694bc082f6119b8.jpg"
+        },
+
+
+        {
+          "id" : 15,
+          "name" :"ftylons",
+          "location" :"nyeri",
+          "capacity" :200,
+
+          "description" :"A formal and calm for any conference.",
+          "image" :"https://i.pinimg.com/564x/7d/02/ff/7d02ff1d32bc268b0ad33be74caab7c6.jpg"
+        },
+
+
+        {
+          "id" : 16,
+          "name" :"rtetili",
+          "location" :"voi",
+          "capacity" :180,
+          "description" :"catual,perfect for a meetup",
+          "image" :"https://i.pinimg.com/564x/c0/e6/88/c0e688f446f9060a3757164c225ae5c4.jpg"
+        },
+
+        {
+          "id" : 17,
+          "name" :"hyteri",
+          "location" :"malindi",
+          "capacity" :300,
+          "description" :"catual,perfect for a meetup",
+          "image" :"https://i.pinimg.com/564x/5f/c0/fb/5fc0fb3b9035249dcb0de4c74231fbd5.jpg"
+        },
+
+        {
+          "id" : 18,
+          "name" :"tgypulu",
+          "location" :"nyeri",
+          "capacity" :200,
+          "description" :"catual,perfect for a meetup",
+          "image" :"https://i.pinimg.com/564x/f6/2e/d9/f62ed9965562c3fe4c132165950bca5a.jpg"
+        },
+
+        {
+          "id" : 19,
+          "name" :"mylo hotel",
+          "location" :"jikaze",
+          "capacity" :200,
+          "description" :"catual,perfect for a meetup",
+          "image" :"https://i.pinimg.com/564x/d3/3c/4c/d33c4c1c412e2216fa2febee661f72e8.jpg"
+        }
+
+
+      ]
+    }
+  

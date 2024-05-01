@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENUEFINDER</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>VENUE FINDER</h1>
+<nav>
+    <ul>
+        <li><a href="HOME">Home</a></li>
+        <li><a href="ABOUT">About</a></li>
+        <li><a href="CONTACT">Contact</a></li>
+        <li><a href="VENUES">Venues</a></li>
+        <li id="selected-venues">Selected Venues: <ul></ul></li> 
+
+    </ul>
+</nav>
+</header>
+<main>
+        <section id="search-section">
+    <input type="text" id ="search-input" placeholder="Search for venues ..." >
+    <div class="button">
+    <button onclick="searchVenues()">Search</button></div>
+        </section>
+
+        <section id="results-section">
+            <ul id="results-list" class="grid-container"></ul>
+        </section>
+</main>
+
+    <script src="index.js"></script>
+</body>
+</html>
