@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultsList = document.getElementById('results-list');
 
     function displayVenues(venues) {
-        resultsList.innerHTML = ''; // Clear existing venues
+        resultsList.textContent = ''; // Clear existing venues
         venues.forEach(venue => {
             const li = document.createElement('li');
             li.className = 'venue-item';
-            li.innerHTML = `
+            li.textContent = `
+
                 <div class="venue-image" style="background-image: url('${venue.image}'); height: 200px; background-size: cover; border-top-left-radius: 8px; border-top-right-radius: 8px;"></div>
                 <div class="venue-info">
                     <h3>${venue.name}</h3>
