@@ -44,6 +44,8 @@ function displayVenues(venues) {
 });
 }
 
+ 
+      
 function fetchVenues() {
     fetch('http://localhost:3000/venues')
         .then(response => response.json())
@@ -59,9 +61,11 @@ function searchVenues() {
         .catch(error => console.error('Error fetching data: ', error));
 }
 
+
 const searchButton = document.querySelector('.button button');
 searchButton.addEventListener('click', searchVenues);
 
+         
 // Initially fetch all venues
 fetchVenues();
  
@@ -80,3 +84,26 @@ fetchVenues();
  }
 
  });
+
+function updateVenue(venueId, updatedVenueData) {
+                fetch(`http://localhost:3000/venues/${venueId}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedVenueData)
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            throw new Error('Failed to update venue.');
+                        }
+                        return response.json();
+                    })
+                    .then(updatedVenue => {
+
+                        console.log('Venue updated', updatedVenue);
+                    })
+                    .catch(error => {
+                        console.error('Error updating venue: ', error);
+                    })
+            };
