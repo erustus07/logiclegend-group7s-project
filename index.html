@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENUEFINDER</title>
-    <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-<h1>VENUE FINDER</h1>
-<nav>
-    <ul>
-        <li><a href="HOME">Home</a></li>
-        <li><a href="ABOUT">About</a></li>
-        <li><a href="CONTACT">Contact</a></li>
-        <li><a href="VENUES">Venues</a></li>
-        <li id="selected-venues">Selected Venues: <ul></ul></li> 
 
-    </ul>
-</nav>
-</header>
-<main>
+<body>
+    <header>
+        <h1>VENUE FINDER</h1>
+        <nav>
+            <ul>
+                <li><a href="HOME">Home</a></li>
+                <li><a href="ABOUT">About</a></li>
+                <li><a href="CONTACT">Contact</a></li>
+                <li><a href="VENUES">Venues</a></li>
+                <li id="selected-venues">Selected Venues: <ul></ul>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
         <section id="search-section">
-    <input type="text" id ="search-input" placeholder="Search for venues ..." >
-    <div class="button">
-    <button onclick="searchVenues()">Search</button></div>
+            <input type="text" id="search-input" placeholder="Search for venues ...">
+            <div class="button">
+                <button onclick="searchVenues()">Search</button>
+            </div>
+            <form id="search-form">
+                <table id="input-table">
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name"></td>
+                        <td><label for="location">Location:</label></td>
+                        <td><input type="text" id="location" name="location"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="image">Image URL:</label></td>
+                        <td><input type="text" id="image" name="image"></td>
+                        <td><label for="capacity">Capacity:</label></td>
+                        <td><input type="text" id="capacity" name="capacity"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><label for="description">Description:</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><textarea id="description" name="description"></textarea></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Add Venue">
+                </tr>
+                </table>
+            </form>
         </section>
 
         <section id="results-section">
             <ul id="results-list" class="grid-container"></ul>
         </section>
-</main>
+    </main>
 
     <script src="index.js"></script>
 </body>
-</html>
+
