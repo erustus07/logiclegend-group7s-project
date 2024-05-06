@@ -44,6 +44,7 @@ function displayVenues(venues) {
             updateButton.addEventListener('click', () => {
                 const venueId = updateButton.getAttribute('data-venue-id');
 
+
                 const venueInfoDiv = li.querySelector('.venue-info');
                 venueInfoDiv.innerHTML = '';
 
@@ -58,10 +59,9 @@ function displayVenues(venues) {
                         image: form.elements['image'].value
                     };
                     updateVenue(venueId, updatedVenueData);
-
-                });
-                // Displays a menu where venue details are updated
-                form.innerHTML = `
+                  
+                  });
+                  form.innerHTML = `
                     <label for="name">Name</label>
                     <input type="text" name="name" value="${venue.name}">
                     <label for="location">Location</label>
@@ -79,7 +79,7 @@ function displayVenues(venues) {
             resultsList.appendChild(li);
         });
     }
-
+ 
     function fetchVenues() {
         fetch('http://localhost:3000/venues')
             .then(response => response.json())
@@ -95,28 +95,27 @@ function displayVenues(venues) {
             .catch(error => console.error('Error fetching data: ', error));
     }
 
+
     const searchButton = document.querySelector('.button button');
     searchButton.addEventListener('click', searchVenues);
+
+ function addVenue(venueLocation) {
+    //console.log(JSON.stringify(venueLocation))
+      fetch("http://localhost:3001/venues",{
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json'
+           },
+           body: JSON.stringify(venueLocation)
+       })
+           .then(res => res.json())
+           .then(venue => console.log(venue))
+ }
 
     // Initially fetch all venues
     fetchVenues();
 });
 
-function updateVenue(venueId, updatedVenueData) {
-                fetch(`http://localhost:3000/venues/${venueId}`, {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(updatedVenueData)
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            throw new Error('Failed to update venue.');
-                        }
-                        return response.json();
-                    })
-                    .then(updatedVenue => {
 function updateVenue(venueId, updatedVenueData) {
     fetch(`http://localhost:3000/venues/${venueId}`, {
         method: 'PATCH',
