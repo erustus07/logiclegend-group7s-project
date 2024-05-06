@@ -86,7 +86,7 @@ fetchVenues();
  });
 
 function updateVenue(venueId, updatedVenueData) {
-                fetch(`http://localhost:3000/venues/${venueId}`, {
+                fetch(`http://localhost:3001/venues/${venueId}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
