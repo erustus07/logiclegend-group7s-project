@@ -3,8 +3,8 @@
     {
       "id": "1",
       "name": "Ocean View",
-      "location": "nairobi",
-      "capacity": "300",
+      "location": "Kiambu",
+      "capacity": 200,
       "description": "A casual place and backdrop for any conference.",
       "image": "https://i.pinimg.com/564x/54/5c/8a/545c8a3fee30059013e1fe301b521665.jpg"
     },
@@ -151,6 +151,14 @@
       "capacity": 200,
       "description": "catual,perfect for a meetup",
       "image": "https://i.pinimg.com/564x/d3/3c/4c/d33c4c1c412e2216fa2febee661f72e8.jpg"
+    },
+    {
+      "id": "7cfd",
+      "name": "Kisumu haven",
+      "location": "kisumu",
+      "image": "https://i.pinimg.com/564x/6b/a7/88/6ba788e983e5593f0dd88fcc2140287f.jpg",
+      "capacity": "300",
+      "description": "Comfort undefined"
     }
   ]
 }

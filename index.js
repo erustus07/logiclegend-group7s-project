@@ -1,18 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
     const resultsList = document.getElementById('results-list');
+    document.querySelector('#search-form').addEventListener('submit', handleSubmit)
 
-    function displayVenues(venues) {
-        resultsList.innerHTML = ''; // Clear existing venues
-        venues.forEach(venue => {
-            const li = document.createElement('li');
-            li.className = 'venue-item';
-            li.innerHTML = `
+
+ //Event handlers
+ function handleSubmit(e) {
+     e.preventDefault()
+     let venueLocation = {
+         name: e.target.name.value,
+         location: e.target.location.value,
+         image: e.target.image.value,
+         capacity: e.target.capacity.value,
+         description: e.target.description.value,
+     }
+     displayVenues([venueLocation])
+    
+     // addVenue(venueLocation)
+     addVenue(venueLocation)
+
+ }
+
+//DOM Render Functions
+function displayVenues(venues) {
+
+    resultsList.innerHTML = ''; // Clear existing venues
+    venues.forEach(venue => {
+    const li = document.createElement('li');
+    li.className = 'venue-item';
+    li.innerHTML = `
                 <div class="venue-image" style="background-image: url('${venue.image}'); height: 200px; background-size: cover; border-top-left-radius: 8px; border-top-right-radius: 8px;"></div>
                 <div class="venue-info">
                     <h3>${venue.name}</h3>
                     <p>Location: ${venue.location}</p>
                     <p>Capacity: ${venue.capacity}</p>
                     <p>${venue.description}</p>
+                    </div>
+                <div>
                     <button class="add-venue-btn">Add to List</button>
                     <button class ="update-venue-btn" data-venue-id= "${venue.id}">Update Venue</button>
                 </div>
@@ -80,6 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function updateVenue(venueId, updatedVenueData) {
+                fetch(`http://localhost:3000/venues/${venueId}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedVenueData)
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            throw new Error('Failed to update venue.');
+                        }
+                        return response.json();
+                    })
+                    .then(updatedVenue => {
+function updateVenue(venueId, updatedVenueData) {
     fetch(`http://localhost:3000/venues/${venueId}`, {
         method: 'PATCH',
         headers: {
@@ -94,6 +132,13 @@ function updateVenue(venueId, updatedVenueData) {
             return response.json();
         })
         .then(updatedVenue => {
+
+                        console.log('Venue updated', updatedVenue);
+                    })
+                    .catch(error => {
+                        console.error('Error updating venue: ', error);
+                    })
+            };
 
             console.log('Venue updated', updatedVenue);
         })
