@@ -37,38 +37,67 @@ function displayVenues(venues) {
                     </div>
                 <div>
                     <button class="add-venue-btn">Add to List</button>
+                    <button class ="update-venue-btn" data-venue-id= "${venue.id}">Update Venue</button>
                 </div>
             `;
-    
-    resultsList.appendChild(li);
-});
-}
+            const updateButton = li.querySelector('.update-venue-btn');
+            updateButton.addEventListener('click', () => {
+                const venueId = updateButton.getAttribute('data-venue-id');
 
+
+                const venueInfoDiv = li.querySelector('.venue-info');
+                venueInfoDiv.innerHTML = '';
+
+                const form = document.createElement('form');
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const updatedVenueData = {
+                        name: form.elements['name'].value,
+                        location: form.elements['location'].value,
+                        capacity: form.elements['capacity'].value,
+                        description: form.elements['description'].value,
+                        image: form.elements['image'].value
+                    };
+                    updateVenue(venueId, updatedVenueData);
+                  
+                  });
+                  form.innerHTML = `
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="${venue.name}">
+                    <label for="location">Location</label>
+                    <input type="text" name="location" value="${venue.location}">
+                    <label for="capacity">Capacity</label>
+                    <input type="number" name="capacity" value="${venue.capacity}">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" value="${venue.description}">
+                    <label for="image">Image</label>
+                    <input type="text" name="image" value="${venue.image}">
+                    <button type="submit">Update Venue</button>
+                `;
+                venueInfoDiv.appendChild(form);
+            });
+            resultsList.appendChild(li);
+        });
+    }
  
-      
-function fetchVenues() {
-    fetch('http://localhost:3001/venues')
-        .then(response => response.json())
-        .then(data => displayVenues(data))
-        .catch(error => console.error('Error fetching data: ', error));
-}
+    function fetchVenues() {
+        fetch('http://localhost:3000/venues')
+            .then(response => response.json())
+            .then(data => displayVenues(data))
+            .catch(error => console.error('Error fetching data: ', error));
+    }
 
-function searchVenues() {
-    const searchText = document.getElementById('search-input').value.toLowerCase();
-    fetch(`http://localhost:3001/venues?q=${searchText}`)
-        .then(response => response.json())
-        .then(data => displayVenues(data))
-        .catch(error => console.error('Error fetching data: ', error));
-}
+    function searchVenues() {
+        const searchText = document.getElementById('search-input').value.toLowerCase();
+        fetch(`http://localhost:3000/venues?q=${searchText}`)
+            .then(response => response.json())
+            .then(data => displayVenues(data))
+            .catch(error => console.error('Error fetching data: ', error));
+    }
 
 
-const searchButton = document.querySelector('.button button');
-searchButton.addEventListener('click', searchVenues);
-
-         
-// Initially fetch all venues
-fetchVenues();
- 
+    const searchButton = document.querySelector('.button button');
+    searchButton.addEventListener('click', searchVenues);
 
  function addVenue(venueLocation) {
     //console.log(JSON.stringify(venueLocation))
@@ -83,23 +112,25 @@ fetchVenues();
            .then(venue => console.log(venue))
  }
 
- });
+    // Initially fetch all venues
+    fetchVenues();
+});
 
 function updateVenue(venueId, updatedVenueData) {
-                fetch(`http://localhost:3001/venues/${venueId}`, {
-                    method: 'PATCH',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(updatedVenueData)
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            throw new Error('Failed to update venue.');
-                        }
-                        return response.json();
-                    })
-                    .then(updatedVenue => {
+    fetch(`http://localhost:3000/venues/${venueId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedVenueData)
+    })
+        .then(response => {
+            if (response.ok) {
+                throw new Error('Failed to update venue.');
+            }
+            return response.json();
+        })
+        .then(updatedVenue => {
 
                         console.log('Venue updated', updatedVenue);
                     })
@@ -107,3 +138,10 @@ function updateVenue(venueId, updatedVenueData) {
                         console.error('Error updating venue: ', error);
                     })
             };
+
+            console.log('Venue updated', updatedVenue);
+        })
+        .catch(error => {
+            console.error('Error updating venue: ', error);
+        })
+};
