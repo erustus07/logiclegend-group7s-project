@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     updateVenue(venueId, updatedVenueData);
 
                 });
+                // Displays a menu where venue details are updated
                 form.innerHTML = `
                     <label for="name">Name</label>
                     <input type="text" name="name" value="${venue.name}">
@@ -51,8 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button type="submit">Update Venue</button>
                 `;
                 venueInfoDiv.appendChild(form);
-
-
             });
             resultsList.appendChild(li);
         });
