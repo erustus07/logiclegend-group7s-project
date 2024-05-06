@@ -47,7 +47,7 @@ function displayVenues(venues) {
  
       
 function fetchVenues() {
-    fetch('http://localhost:3000/venues')
+    fetch('http://localhost:3001/venues')
         .then(response => response.json())
         .then(data => displayVenues(data))
         .catch(error => console.error('Error fetching data: ', error));
@@ -55,7 +55,7 @@ function fetchVenues() {
 
 function searchVenues() {
     const searchText = document.getElementById('search-input').value.toLowerCase();
-    fetch(`http://localhost:3000/venues?q=${searchText}`)
+    fetch(`http://localhost:3001/venues?q=${searchText}`)
         .then(response => response.json())
         .then(data => displayVenues(data))
         .catch(error => console.error('Error fetching data: ', error));
@@ -72,7 +72,7 @@ fetchVenues();
 
  function addVenue(venueLocation) {
     //console.log(JSON.stringify(venueLocation))
-      fetch("http://localhost:3000/venues",{
+      fetch("http://localhost:3001/venues",{
            method: 'POST',
            headers: {
                'Content-Type': 'application/json'
